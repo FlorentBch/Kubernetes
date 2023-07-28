@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: express-configmap
+  # Un namespace
+  # namespace: mon-super-namespace
+data:
+  database_urls: mongodb-service

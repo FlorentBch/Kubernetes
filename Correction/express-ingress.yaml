@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+# Métadonnées de l'ingress
+metadata:
+  name: ingress-mongo-express
+  labels:
+    name: ingress-mongo-express
+    # Spécificité de l'ingress
+spec:
+  rules:
+  # Ajout d'une URL pulic et accessible
+  - host: mypoulet.super
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          serviceName: express-service
+          servicePort: 8081
